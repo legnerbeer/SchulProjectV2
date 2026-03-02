@@ -1,0 +1,13 @@
+**[Unit]**
+Description=Wrapper for MQTT server
+After=network.target
+
+**[Service]**
+User=pi
+WorkingDirectory=/home/pi/v2
+ExecStart=/home/pi/v2/.venv/bin/python src/wrapper.py
+Restart=always
+RestartSec=5
+
+**[Install]**
+WantedBy=multi-user.target
